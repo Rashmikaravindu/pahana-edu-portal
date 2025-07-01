@@ -1,29 +1,9 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "Dockerfile"
 
 [deploy]
-numReplicas = 1
-sleepApplication = false
-restartPolicyType = "ON_FAILURE"
-restartPolicyMaxRetries = 3
+startCommand = "/usr/local/tomcat/bin/start-app.sh"
 healthcheckPath = "/"
 healthcheckTimeout = 100
-startCommand = "/usr/local/tomcat/bin/start-app.sh"
-
-[build.watchPatterns]
-include = ["**/*.java", "**/*.jsp", "**/*.xml", "**/*.properties", "**/*.css", "**/*.js"]
-ignore = ["target/**", "*.log", ".git/**"]
-
-# Environment specific settings
-[environments.production]
-variables = { }
-
-[environments.development]
-variables = { }
-
-# Resource limits
-[resources]
-cpuLimit = "1000m"
-memoryLimit = "1Gi"
-ephemeralStorageLimit = "2Gi"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
