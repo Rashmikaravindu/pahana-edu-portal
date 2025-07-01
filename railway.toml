@@ -1,9 +1,29 @@
 [build]
 builder = "dockerfile"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "catalina.sh run"
+numReplicas = 1
+sleepApplication = false
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
 healthcheckPath = "/"
 healthcheckTimeout = 100
-restartPolicyType = "ON_FAILURE"
-restartPolicyMaxRetries = 10
+startCommand = "/usr/local/tomcat/bin/start-app.sh"
+
+[build.watchPatterns]
+include = ["**/*.java", "**/*.jsp", "**/*.xml", "**/*.properties", "**/*.css", "**/*.js"]
+ignore = ["target/**", "*.log", ".git/**"]
+
+# Environment specific settings
+[environments.production]
+variables = { }
+
+[environments.development]
+variables = { }
+
+# Resource limits
+[resources]
+cpuLimit = "1000m"
+memoryLimit = "1Gi"
+ephemeralStorageLimit = "2Gi"
