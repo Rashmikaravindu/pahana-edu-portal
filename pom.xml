@@ -6,61 +6,31 @@
          
     <modelVersion>4.0.0</modelVersion>
     
-    <!-- ================================================================ -->
-    <!-- PROJECT INFORMATION                                             -->
-    <!-- ================================================================ -->
+    <!-- Project Information -->
     <groupId>com.pahanaedu</groupId>
     <artifactId>pahana-edu-portal</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
-    <n>Pahana Edu Customer Portal</n>
+    <name>Pahana Edu Customer Portal</name>
     <description>Educational portal for Pahana Edu with customer management system</description>
     
-    <!-- ================================================================ -->
-    <!-- PROPERTIES                                                       -->
-    <!-- ================================================================ -->
+    <!-- Properties -->
     <properties>
-        <!-- Java Version -->
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <java.version>11</java.version>
-        
-        <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        
-        <!-- Maven Settings -->
-        <maven.compiler.release>11</maven.compiler.release>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        
-        <!-- Dependency Versions -->
-        <servlet.version>4.0.1</servlet.version>
-        <jsp.version>2.3.3</jsp.version>
-        <jstl.version>1.2</jstl.version>
-        <mysql.version>8.0.33</mysql.version>
-        <postgresql.version>42.6.0</postgresql.version>
-        <gson.version>2.10.1</gson.version>
-        <bcrypt.version>0.4</bcrypt.version>
-        <commons-lang.version>3.12.0</commons-lang.version>
-        <commons-io.version>2.11.0</commons-io.version>
-        <commons-fileupload.version>1.5</commons-fileupload.version>
-        <mail.version>1.6.2</mail.version>
-        <logback.version>1.2.12</logback.version>
     </properties>
     
-    <!-- ================================================================ -->
-    <!-- DEPENDENCIES                                                     -->
-    <!-- ================================================================ -->
+    <!-- Dependencies -->
     <dependencies>
-        <!-- ============================================================ -->
-        <!-- WEB & SERVLET DEPENDENCIES                                  -->
-        <!-- ============================================================ -->
-        
         <!-- Servlet API -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
+            <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
         
@@ -68,7 +38,7 @@
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>${jsp.version}</version>
+            <version>2.3.3</version>
             <scope>provided</scope>
         </dependency>
         
@@ -76,7 +46,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>${jstl.version}</version>
+            <version>1.2</version>
         </dependency>
         
         <!-- JSTL Implementation -->
@@ -86,33 +56,25 @@
             <version>1.2.5</version>
         </dependency>
         
-        <!-- ============================================================ -->
-        <!-- DATABASE DRIVERS                                            -->
-        <!-- ============================================================ -->
-        
-        <!-- MySQL Connector (Local Development) -->
+        <!-- MySQL Connector -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
+            <version>8.0.33</version>
         </dependency>
         
-        <!-- PostgreSQL Driver (Production) -->
+        <!-- PostgreSQL Driver -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
+            <version>42.6.0</version>
         </dependency>
-        
-        <!-- ============================================================ -->
-        <!-- JSON PROCESSING                                             -->
-        <!-- ============================================================ -->
         
         <!-- Google Gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>${gson.version}</version>
+            <version>2.10.1</version>
         </dependency>
         
         <!-- JSON Alternative -->
@@ -122,40 +84,32 @@
             <version>20230618</version>
         </dependency>
         
-        <!-- ============================================================ -->
-        <!-- SECURITY & ENCRYPTION                                       -->
-        <!-- ============================================================ -->
-        
         <!-- BCrypt Password Hashing -->
         <dependency>
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
-            <version>${bcrypt.version}</version>
+            <version>0.4</version>
         </dependency>
-        
-        <!-- ============================================================ -->
-        <!-- UTILITY LIBRARIES                                           -->
-        <!-- ============================================================ -->
         
         <!-- Apache Commons Lang -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang.version}</version>
+            <version>3.12.0</version>
         </dependency>
         
         <!-- Apache Commons IO -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
+            <version>2.11.0</version>
         </dependency>
         
         <!-- Apache Commons FileUpload -->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>${commons-fileupload.version}</version>
+            <version>1.5</version>
         </dependency>
         
         <!-- Apache Commons Codec -->
@@ -165,27 +119,19 @@
             <version>1.15</version>
         </dependency>
         
-        <!-- ============================================================ -->
-        <!-- EMAIL SUPPORT                                               -->
-        <!-- ============================================================ -->
-        
         <!-- JavaMail API -->
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>javax.mail-api</artifactId>
-            <version>${mail.version}</version>
+            <version>1.6.2</version>
         </dependency>
         
         <!-- JavaMail Implementation -->
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
-            <version>${mail.version}</version>
+            <version>1.6.2</version>
         </dependency>
-        
-        <!-- ============================================================ -->
-        <!-- LOGGING                                                     -->
-        <!-- ============================================================ -->
         
         <!-- SLF4J API -->
         <dependency>
@@ -198,12 +144,8 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
+            <version>1.2.12</version>
         </dependency>
-        
-        <!-- ============================================================ -->
-        <!-- VALIDATION                                                  -->
-        <!-- ============================================================ -->
         
         <!-- Bean Validation API -->
         <dependency>
@@ -218,48 +160,15 @@
             <artifactId>hibernate-validator</artifactId>
             <version>6.2.5.Final</version>
         </dependency>
-        
-        <!-- ============================================================ -->
-        <!-- TESTING (Optional)                                         -->
-        <!-- ============================================================ -->
-        
-        <!-- JUnit 5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.3</version>
-            <scope>test</scope>
-        </dependency>
-        
-        <!-- Mockito -->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>5.3.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     
-    <!-- ================================================================ -->
-    <!-- BUILD CONFIGURATION                                             -->
-    <!-- ================================================================ -->
+    <!-- Build Configuration -->
     <build>
         <finalName>pahana-edu-portal</finalName>
         <sourceDirectory>src</sourceDirectory>
         
-        <!-- Resources -->
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-        
-        <!-- Plugins -->
         <plugins>
-            <!-- ======================================================== -->
-            <!-- Maven Compiler Plugin                                   -->
-            <!-- ======================================================== -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -268,15 +177,10 @@
                     <source>11</source>
                     <target>11</target>
                     <encoding>UTF-8</encoding>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
             
-            <!-- ======================================================== -->
-            <!-- Maven WAR Plugin                                        -->
-            <!-- ======================================================== -->
+            <!-- Maven WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -285,18 +189,10 @@
                     <warSourceDirectory>webapp</warSourceDirectory>
                     <webXml>webapp/WEB-INF/web.xml</webXml>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                        </manifest>
-                    </archive>
                 </configuration>
             </plugin>
             
-            <!-- ======================================================== -->
-            <!-- Maven Resources Plugin                                  -->
-            <!-- ======================================================== -->
+            <!-- Maven Resources Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -306,108 +202,15 @@
                 </configuration>
             </plugin>
             
-            <!-- ======================================================== -->
-            <!-- Maven Surefire Plugin (Tests)                          -->
-            <!-- ======================================================== -->
+            <!-- Maven Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
                     <skipTests>true</skipTests>
-                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
-            </plugin>
-            
-            <!-- ======================================================== -->
-            <!-- Maven Clean Plugin                                      -->
-            <!-- ======================================================== -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.3.1</version>
-            </plugin>
-            
-            <!-- ======================================================== -->
-            <!-- Maven Install Plugin                                    -->
-            <!-- ======================================================== -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>3.1.1</version>
-            </plugin>
-            
-            <!-- ======================================================== -->
-            <!-- Maven Deploy Plugin                                     -->
-            <!-- ======================================================== -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.1</version>
-            </plugin>
-            
-            <!-- ======================================================== -->
-            <!-- Maven Dependency Plugin                                 -->
-            <!-- ======================================================== -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.6.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
-    
-    <!-- ================================================================ -->
-    <!-- PROFILES                                                         -->
-    <!-- ================================================================ -->
-    <profiles>
-        <!-- Development Profile -->
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <environment>development</environment>
-                <database.type>mysql</database.type>
-            </properties>
-        </profile>
-        
-        <!-- Production Profile -->
-        <profile>
-            <id>prod</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <environment>production</environment>
-                <database.type>postgresql</database.type>
-            </properties>
-        </profile>
-        
-        <!-- Railway Profile -->
-        <profile>
-            <id>railway</id>
-            <activation>
-                <property>
-                    <name>env.RAILWAY_ENVIRONMENT</name>
-                </property>
-            </activation>
-            <properties>
-                <environment>railway</environment>
-                <database.type>postgresql</database.type>
-            </properties>
-        </profile>
-    </profiles>
 </project>
