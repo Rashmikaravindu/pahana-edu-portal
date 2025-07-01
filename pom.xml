@@ -3,22 +3,32 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
     <modelVersion>4.0.0</modelVersion>
     
+    <!-- Project Information -->
     <groupId>com.pahanaedu</groupId>
     <artifactId>pahana-edu-portal</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
-    <name>Pahana Edu Portal</name>
+    <name>Pahana Edu Customer Portal</name>
+    <description>Educational portal for Pahana Edu with customer management</description>
     
+    <!-- Properties -->
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
+        <java.version>11</java.version>
     </properties>
     
+    <!-- Dependencies -->
     <dependencies>
+        <!-- ================================================================ -->
+        <!-- SERVLET & JSP DEPENDENCIES                                      -->
+        <!-- ================================================================ -->
+        
         <!-- Servlet API -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -35,33 +45,183 @@
             <scope>provided</scope>
         </dependency>
         
-        <!-- JSTL -->
+        <!-- JSTL (JSP Standard Tag Library) -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
         
-        <!-- MySQL Connector -->
+        <!-- JSP Standard Tag Library Implementation -->
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-impl</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- DATABASE DRIVERS                                                -->
+        <!-- ================================================================ -->
+        
+        <!-- MySQL Connector (for local development) -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
         
-        <!-- PostgreSQL Driver -->
+        <!-- PostgreSQL Driver (for cloud deployment) -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
         </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- JSON PROCESSING                                                 -->
+        <!-- ================================================================ -->
+        
+        <!-- Google Gson for JSON processing -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        
+        <!-- Alternative JSON library -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230618</version>
+        </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- SECURITY & ENCRYPTION                                           -->
+        <!-- ================================================================ -->
+        
+        <!-- BCrypt for password hashing -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- UTILITY LIBRARIES                                               -->
+        <!-- ================================================================ -->
+        
+        <!-- Apache Commons Lang (String utilities, etc.) -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        
+        <!-- Apache Commons IO (File utilities) -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        
+        <!-- Apache Commons FileUpload (for file uploads) -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.5</version>
+        </dependency>
+        
+        <!-- Apache Commons Codec (encoding/decoding utilities) -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+        </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- VALIDATION                                                       -->
+        <!-- ================================================================ -->
+        
+        <!-- Bean Validation API -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+        
+        <!-- Hibernate Validator (Bean Validation implementation) -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.2.5.Final</version>
+        </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- LOGGING                                                          -->
+        <!-- ================================================================ -->
+        
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+        
+        <!-- Logback Classic (SLF4J implementation) -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- EMAIL SUPPORT                                                    -->
+        <!-- ================================================================ -->
+        
+        <!-- JavaMail API -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        
+        <!-- JavaMail Implementation -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        
+        <!-- ================================================================ -->
+        <!-- TESTING (Optional)                                              -->
+        <!-- ================================================================ -->
+        
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.3</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Mockito (for testing) -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     
+    <!-- Build Configuration -->
     <build>
         <finalName>pahana-edu-portal</finalName>
         <sourceDirectory>src</sourceDirectory>
         
         <plugins>
+            <!-- ================================================================ -->
+            <!-- Maven Compiler Plugin                                           -->
+            <!-- ================================================================ -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -69,9 +229,13 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             
+            <!-- ================================================================ -->
+            <!-- Maven WAR Plugin                                                -->
+            <!-- ================================================================ -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -82,6 +246,78 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+            
+            <!-- ================================================================ -->
+            <!-- Maven Resources Plugin                                          -->
+            <!-- ================================================================ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            
+            <!-- ================================================================ -->
+            <!-- Maven Surefire Plugin (for running tests)                      -->
+            <!-- ================================================================ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            
+            <!-- ================================================================ -->
+            <!-- Maven Clean Plugin                                              -->
+            <!-- ================================================================ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+            
+            <!-- ================================================================ -->
+            <!-- Maven Install Plugin                                            -->
+            <!-- ================================================================ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+            
+            <!-- ================================================================ -->
+            <!-- Maven Deploy Plugin                                             -->
+            <!-- ================================================================ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
         </plugins>
     </build>
+    
+    <!-- ================================================================ -->
+    <!-- PROFILES (Optional - for different environments)                -->
+    <!-- ================================================================ -->
+    <profiles>
+        <!-- Development Profile -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>development</env>
+            </properties>
+        </profile>
+        
+        <!-- Production Profile -->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <env>production</env>
+            </properties>
+        </profile>
+    </profiles>
 </project>
