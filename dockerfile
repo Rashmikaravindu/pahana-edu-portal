@@ -1,33 +1,33 @@
-# Build stage - Maven build කරන්න
+# Multi-stage build
 FROM maven:3.8.6-openjdk-11-slim AS build
 
-# Working directory set කරන්න
+# Set working directory
 WORKDIR /app
 
-# Copy pom.xml and download dependencies
+# Copy pom.xml first for dependency caching
 COPY pom.xml .
-RUN mvn dependency:go-offline -B
+RUN mvn dependency:go-offline -B || true
 
 # Copy source code
 COPY src ./src
 COPY webapp ./webapp
 
-# Build the WAR file
-RUN mvn clean package -DskipTests
+# Build the application
+RUN mvn clean package -DskipTests || mvn clean compile war:war -DskipTests
 
-# Runtime stage - Tomcat server
+# Production stage
 FROM tomcat:9.0-jdk11-openjdk-slim
 
-# Remove default Tomcat applications
+# Remove default webapps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy WAR file from build stage
-COPY --from=build /app/target/pahana-edu-portal.war /usr/local/tomcat/webapps/ROOT.war
+# Copy built WAR file
+COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# Set environment variables
-ENV CATALINA_OPTS="-Xmx512m -Xms256m"
+# Set JVM options
+ENV JAVA_OPTS="-Xmx512m -Xms256m"
 
-# Expose port 8080
+# Expose port
 EXPOSE 8080
 
 # Start Tomcat
