@@ -1,0 +1,424 @@
+/* 
+==============================================================================
+PAHANA EDU - CASHIER DASHBOARD STYLES
+==============================================================================
+Specialized styles for cashier dashboard
+Professional color scheme for business operations
+==============================================================================
+*/
+
+:root {
+    /* Cashier-specific colors */
+    --cashier-primary: #2D3748;      /* Dark Gray - Professional */
+    --cashier-secondary: #4A5568;    /* Medium Gray */
+    --cashier-accent: #3182CE;       /* Professional Blue */
+    --cashier-success: #38A169;      /* Green for sales */
+    --cashier-warning: #D69E2E;      /* Orange for alerts */
+    --cashier-danger: #E53E3E;       /* Red for errors */
+    --cashier-light: #F7FAFC;        /* Light background */
+    --cashier-border: #E2E8F0;       /* Border color */
+}
+
+/* ==============================================================================
+   CASHIER HEADER STYLES
+============================================================================== */
+
+.cashier-header {
+    background: var(--cashier-primary);
+    border-bottom: 3px solid var(--cashier-accent);
+}
+
+.cashier-header .logo {
+    color: var(--white);
+}
+
+.cashier-header .logo i {
+    color: var(--cashier-accent);
+}
+
+.cashier-header .nav-menu a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cashier-header .nav-menu a:hover {
+    color: var(--white);
+}
+
+.cashier-info {
+    background: rgba(49, 130, 206, 0.1);
+    border: 1px solid var(--cashier-accent);
+}
+
+.cashier-avatar {
+    background: var(--cashier-accent);
+}
+
+/* ==============================================================================
+   CASHIER HERO SECTION
+============================================================================== */
+
+.cashier-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, var(--cashier-primary) 0%, var(--cashier-secondary) 100%);
+    color: var(--white);
+}
+
+.cashier-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.cashier-stats {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.cashier-stat {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.cashier-stat:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.cashier-stat .stat-icon {
+    background: var(--cashier-accent);
+}
+
+/* ==============================================================================
+   CASHIER ACTIONS SECTION
+============================================================================== */
+
+.cashier-actions {
+    padding: 80px 0;
+    background: var(--cashier-light);
+}
+
+.cashier-actions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cashier-action {
+    border: 2px solid var(--cashier-border);
+    transition: all 0.3s ease;
+}
+
+.cashier-action:hover {
+    border-color: var(--cashier-accent);
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.15);
+}
+
+.cashier-action .action-icon {
+    background: var(--cashier-primary);
+}
+
+.cashier-action .action-btn {
+    background: var(--cashier-accent);
+}
+
+.cashier-action .action-btn:hover {
+    background: var(--cashier-primary);
+}
+
+/* ==============================================================================
+   BILLING SECTION
+============================================================================== */
+
+.billing-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.billing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.billing-interface {
+    margin-top: 40px;
+}
+
+.product-search {
+    margin-bottom: 32px;
+}
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 2px solid var(--cashier-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-btn {
+    background: var(--cashier-accent);
+    color: var(--white);
+    border: none;
+    padding: 16px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+    background: var(--cashier-primary);
+}
+
+.billing-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.bill-items, .bill-summary {
+    background: var(--white);
+    border: 2px solid var(--cashier-border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.bill-items h3, .bill-summary h3 {
+    color: var(--cashier-primary);
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--cashier-border);
+    padding-bottom: 12px;
+}
+
+.empty-bill {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+}
+
+.empty-bill i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--cashier-border);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 8px 0;
+    color: var(--text-primary);
+}
+
+.summary-row.total {
+    border-top: 2px solid var(--cashier-border);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--cashier-primary);
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.bill-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.btn-clear, .btn-print {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-clear {
+    background: var(--cashier-danger);
+    color: var(--white);
+}
+
+.btn-clear:hover {
+    background: #C53030;
+}
+
+.btn-print {
+    background: var(--cashier-success);
+    color: var(--white);
+}
+
+.btn-print:hover {
+    background: #2F855A;
+}
+
+/* ==============================================================================
+   CASHIER ACTIVITIES SECTION
+============================================================================== */
+
+.cashier-activities {
+    padding: 80px 0;
+    background: var(--cashier-light);
+}
+
+.activities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cashier-activities .activity-item {
+    background: var(--white);
+    border: 2px solid var(--cashier-border);
+}
+
+.cashier-activities .activity-item:hover {
+    border-color: var(--cashier-accent);
+}
+
+.cashier-activities .activity-icon {
+    background: var(--cashier-success);
+}
+
+/* ==============================================================================
+   CASHIER FOOTER
+============================================================================== */
+
+.cashier-footer {
+    background: var(--cashier-primary);
+}
+
+.cashier-footer .footer-brand h3 {
+    color: var(--cashier-accent);
+}
+
+/* ==============================================================================
+   RESPONSIVE DESIGN FOR CASHIER
+============================================================================== */
+
+@media (max-width: 1024px) {
+    .billing-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .cashier-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cashier-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .search-btn {
+        padding: 12px;
+    }
+    
+    .bill-actions {
+        flex-direction: column;
+    }
+    
+    .cashier-hero,
+    .cashier-actions,
+    .billing-section,
+    .cashier-activities {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .cashier-hero-container,
+    .cashier-actions-container,
+    .billing-container,
+    .activities-container {
+        padding: 0 16px;
+    }
+    
+    .bill-items,
+    .bill-summary {
+        padding: 20px;
+    }
+}
+
+/* ==============================================================================
+   CASHIER SPECIFIC ANIMATIONS
+============================================================================== */
+
+.cashier-stat {
+    animation: slideInUp 0.6s ease;
+}
+
+.cashier-stat:nth-child(1) { animation-delay: 0.1s; }
+.cashier-stat:nth-child(2) { animation-delay: 0.2s; }
+.cashier-stat:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================================================================
+   PROFESSIONAL STYLING TOUCHES
+============================================================================== */
+
+.section-title {
+    color: var(--cashier-primary);
+    font-weight: 700;
+}
+
+.billing-section .section-title {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Print styles for bills */
+@media print {
+    .cashier-header,
+    .cashier-hero,
+    .cashier-actions,
+    .cashier-activities,
+    .cashier-footer {
+        display: none;
+    }
+    
+    .billing-section {
+        padding: 0;
+    }
+    
+    .bill-actions {
+        display: none;
+    }
+}
